@@ -91,7 +91,6 @@ library(mosaic)
 ```
 ```
 plotDist(dist='t', df=2, col="blue")
-Output :
 ```
 
 # <img width="449" alt="Screen Shot 2022-05-29 at 9 48 11 PM" src="https://user-images.githubusercontent.com/102727966/170875539-b5e7a29b-333f-4186-aa1f-f6b0c2908831.png">
@@ -207,7 +206,6 @@ ggplot(my_data, aes(x = Group, y = Length)) +
 > Data yang digunakan merupakan hasil eksperimen yang dilakukan untuk mengetahui pengaruh suhu operasi (100 ̊C, 125 ̊C dan 150 ̊C) dan tiga jenis kaca pelat muka (A, B dan C) pada keluaran cahaya tabung osiloskop. Percobaan dilakukan sebanyak 27 kali dan didapat data sebagai berikut: Data Hasil Eksperimen. Dengan data tersebut:
 
 a. Buatlah plot sederhana untuk visualisasi data
->  
 ```
 install.packages("multcompView")
 library(readr)
@@ -224,7 +222,6 @@ qplot(x = Temp, y = Light, geom = "point", data = GTL) +
   facet_grid(.~Glass, labeller = label_both)
 ```
 b. Lakukan uji ANOVA dua arah
->
 ```
 GTL$Glass <- as.factor(GTL$Glass)
 GTL$Temp_Factor <- as.factor(GTL$Temp)
@@ -232,10 +229,6 @@ str(GTL)
 
 anova <- aov(Light ~ Glass*Temp_Factor, data = GTL)
 summary(anova)
-```
-Output :
-```
-
 ```
 
 c. Tampilkan tabel dengan mean dan standar deviasi keluaran cahaya untuk setiap perlakuan (kombinasi kaca pelat muka dan suhu operasi)
@@ -252,14 +245,9 @@ d. Lakukan uji Tukey
 tukey <- TukeyHSD(anova)
 print(tukey)
 ```
-Output :
-```
-
-```
 
 e. Gunakan compact letter display untuk menunjukkan perbedaan signifikan
 antara uji Anova dan uji Tukey
->s
 ```
 tukey.cld <- multcompLetters4(anova, tukey)
 print(tukey.cld)
