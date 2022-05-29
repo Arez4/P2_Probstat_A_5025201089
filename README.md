@@ -10,27 +10,27 @@ Andi Muhammad Rafli - 5025201089
 Berdasarkan data pada tabel diatas, diketahui kadar saturasi oksigen dari responden ke-3 ketika belum melakukan aktivitas 𝐴 sebanyak 67, dan setelah melakukan aktivitas 𝐴 sebanyak 70.
 
 a. Carilah Standar Deviasi dari data selisih pasangan pengamatan tabel diatas
-> Menggunakan fungsi `dgeom` untuk mendapatkan nilai peluang soal. Setelah dijalankan, akan didapatkan nilai peluang yaitu sebagai berikut 
+> 
 ```
-dgeom(x=3, prob=0.20)
+
 ```
 Output :
 ```
-[1] 0.1024
+
 ```
 
 b. carilah nilai t (p-value)
-> mean Distribusi Geometrik dengan 10000 data random , prob = 0,20 dimana distribusi geometrik acak tersebut X = 3
-> `rgeom` digunakan karena diminta data rando
-```
-mean(rgeom(n=10000, prob=0.20) == 3)
+> 
+
 ```
 
+```
 Output :
 ```
-[1] 0.1004
+
 ```
 c. tentukanlah apakah terdapat pengaruh yang signifikan secara statistika dalam hal kadar saturasi oksigen , sebelum dan sesudah melakukan aktivitas 𝐴 jika diketahui tingkat signifikansi 𝛼 = 5% serta H0 : “tidak ada pengaruh yang signifikan secara statistika dalam hal kadar saturasi oksigen , sebelum dan sesudah melakukan aktivitas 𝐴”
+>
 ```
 
 ```
@@ -43,7 +43,7 @@ Output :
 
 a. Apakah Anda setuju dengan klaim tersebut?
 ```
-dbinom(4, 20, 0.2)
+
 ```
 Output :
 ```
@@ -51,37 +51,20 @@ Output :
 ```
 
 b. Jelaskan maksud dari output yang dihasilkan!
+> 
 ```
-data.frame(x = 0:10, prob = dbinom(x = 0:10,20,0.2)) %>%
-  mutate(X = ifelse(x == 4, 4, "other")) %>%
-  ggplot(aes(x = factor(x), y = prob, fill = X)) +
-  geom_col() +
-  geom_text(
-    aes(label = round(prob,2), y = prob + 0.01),
-    position = position_dodge(0.9),
-    size = 3,
-    vjust = 0
-  ) +
-  labs(title = "Peluang jika X = 4 pasien sembuh.", x = "Sembuh (x)", y = "Peluang")
-  ```
+
+```
  
-
-
 c.  Buatlah kesimpulan berdasarkan P-Value yang dihasilkan!
-> Nilai rataan dapat dicari dengan `μ = n*p` sedangkan varian `σ² = npq` 
+> 
 ```
-p = 0.2
-n = 4
-rataan = n*p
-rataan
-varian = n*p*(1-p)
-varian
+
 ```
 
 Output :
 ```
-[1] 0.8
-[1] 0.64
+
 ```
 
 ### Soal 3
@@ -92,6 +75,7 @@ Output :
 Dari data diatas berilah keputusan serta kesimpulan yang didapatkan dari hasil diatas. Asumsikan nilai variancenya sama, apakah ada perbedaan pada rata-ratanya (α= 0.05)? Buatlah :
 
 a. H0 dan H1
+>
 ```
 
 ```
@@ -101,7 +85,7 @@ Output :
 ```
 
 b. Hitung Sampel Statistik
-setahun (n = 365)
+>
 ```
 
 ```
@@ -110,6 +94,7 @@ Output:
 
 ```
 c. Lakukan Uji Statistik (df =2)
+>
 ```
 
 ```
@@ -118,6 +103,7 @@ Output :
 
 ```
 d. Nilai Kritikal
+>
 ```
 
 ```
@@ -127,6 +113,7 @@ Output :
 ```
 
 e. Keputusan
+>
 ```
 
 ```
@@ -136,6 +123,7 @@ Output :
 ```
 
 f. Kesimpulan
+>
 ```
 
 ```
@@ -224,6 +212,7 @@ Output :
 ```
 
 b. Lakukan uji ANOVA dua arah
+>
 ```
 
 ```
@@ -233,8 +222,10 @@ Output :
 ```
 
 c. Tampilkan tabel dengan mean dan standar deviasi keluaran cahaya untuk setiap perlakuan (kombinasi kaca pelat muka dan suhu operasi)
+>
 
 d. Lakukan uji Tukey
+>
 ```
 
 ```
