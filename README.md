@@ -10,25 +10,32 @@ Andi Muhammad Rafli - 5025201089
 Berdasarkan data pada tabel diatas, diketahui kadar saturasi oksigen dari responden ke-3 ketika belum melakukan aktivitas 𝐴 sebanyak 67, dan setelah melakukan aktivitas 𝐴 sebanyak 70.
 
 a. Carilah Standar Deviasi dari data selisih pasangan pengamatan tabel diatas
-> 
+> Untuk mencari Standar Deviasi dari data diatas dapat menggunakan `sdev`
 ```
-
+Data_Frame = data.frame(Responden, x, y)
+sdev = sd(Data_Frame$x-Data_Frame$y)
+sdev
 ```
 Output :
-```
-
-```
+# <img width="92" alt="Screen Shot 2022-05-29 at 7 44 14 PM" src="https://user-images.githubusercontent.com/102727966/170869157-4a8993d5-2ede-4de7-acd0-aa3de81046bb.png">
 
 b. carilah nilai t (p-value)
-> 
+> Untuk mencari nilai t, dapat menggunakan `pval` sebagai berikut
 
 ```
-
+h = Data_Frame$y - Data_Frame$x
+ t_mu = mean(h)
+ t_zbar = mean(h[1:6])
+ t_n = 6
+ t_s = sd(h[1:6])
+ t = (t_zbar - t_mu) / (t_s/sqrt(t_n))
+ t
+ pval = 2 * pt(-abs(t), df = t_n - 1)
+ pval
 ```
 Output :
-```
+# <img width="287" alt="Screen Shot 2022-05-29 at 7 47 03 PM" src="https://user-images.githubusercontent.com/102727966/170869305-2e8682f7-bdb9-4b77-9351-e2c3ff75de17.png">
 
-```
 c. tentukanlah apakah terdapat pengaruh yang signifikan secara statistika dalam hal kadar saturasi oksigen , sebelum dan sesudah melakukan aktivitas 𝐴 jika diketahui tingkat signifikansi 𝛼 = 5% serta H0 : “tidak ada pengaruh yang signifikan secara statistika dalam hal kadar saturasi oksigen , sebelum dan sesudah melakukan aktivitas 𝐴”
 >
 ```
@@ -72,7 +79,7 @@ Output :
 
 <img width="430" alt="Screen Shot 2022-05-29 at 6 52 11 PM" src="https://user-images.githubusercontent.com/102727966/170866593-4a150df2-c1ff-41dc-b484-65ee0da05701.png">
 
-Dari data diatas berilah keputusan serta kesimpulan yang didapatkan dari hasil diatas. Asumsikan nilai variancenya sama, apakah ada perbedaan pada rata-ratanya (α= 0.05)? Buatlah :
+> Dari data diatas berilah keputusan serta kesimpulan yang didapatkan dari hasil diatas. Asumsikan nilai variancenya sama, apakah ada perbedaan pada rata-ratanya (α= 0.05)? Buatlah :
 
 a. H0 dan H1
 >
