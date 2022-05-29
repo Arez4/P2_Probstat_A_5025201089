@@ -1,4 +1,4 @@
-# P1_Probstat_A_5025201089
+# P2_Probstat_A_5025201089
 Praktikum Probstat Modul 2 
 Andi Muhammad Rafli - 5025201089
 
